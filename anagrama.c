@@ -9,3 +9,8 @@ void troca(char *x, char *y)
   *x = *y;
   *y = temp;
 }
+
+void processaSolucao(char *str)
+{
+  printf("%s\n", str);
+}
