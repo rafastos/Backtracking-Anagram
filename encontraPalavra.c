@@ -107,6 +107,12 @@ void backtracking(char *str, int inicio, int fim, char **dicionario, int tamDic)
   }
 }
 
+void liberaDicionario(char **dicionario, int tam)
+{
+  for (int i = 0; i < tam; i++)
+    free(dicionario[i]);
+}
+
 int main()
 {
   char str[TAM_MAX];
@@ -128,5 +134,6 @@ int main()
     fflush(stdin);
   } while (resp == 's');
 
+  liberaDicionario(dicionario, tamDic);
   return 0;
 }
