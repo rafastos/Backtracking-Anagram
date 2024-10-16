@@ -55,3 +55,10 @@ void carregaDicionario(char *txt, char **dicionario, int *tamanho)
   }
   fclose(arq);
 }
+
+void troca(char *x, char *y)
+{
+  char temp = *x;
+  *x = *y;
+  *y = temp;
+}
