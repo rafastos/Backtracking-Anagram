@@ -70,3 +70,21 @@ void processaSolucao(char *str, char **dicionario, int tamDic)
   if (indice != -1)
     printf("Anagrama encontrado: %s\n", str);
 }
+
+int geraCandidatos(char *str, int inicio, int fim, int *candidatos)
+{
+  int cont = 0;
+  for (int i = fim; i >= inicio; i--)
+  {
+    int deveTrocar = 1;
+    for (int j = inicio; j < i; j++)
+      if (str[j] == str[i])
+      {
+        deveTrocar = 0;
+        break;
+      }
+    if (deveTrocar)
+      candidatos[cont++] = i;
+  }
+  return cont;
+}
