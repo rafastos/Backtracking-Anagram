@@ -112,15 +112,15 @@ int main()
   char str[TAM_MAX];
   char *dicionario[TAM_DIC];
   char resp;
-  int dictSize = 0;
-  carregaDicionario("dicionario.txt", dicionario, &dictSize);
+  int tamDic = 0;
+  carregaDicionario("dicionario.txt", dicionario, &tamDic);
 
   do
   {
     printf("Digite um anagrama: ");
     scanf("%s", str);
 
-    backtracking(str, 0, strlen(str) - 1, dicionario, dictSize);
+    backtracking(str, 0, strlen(str) - 1, dicionario, tamDic);
     printf("\nContinuar? (s/n): ");
     fflush(stdin);
     scanf("%c", &resp);
