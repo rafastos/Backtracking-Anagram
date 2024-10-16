@@ -5,6 +5,7 @@
 
 #define TAM_MAX 100
 #define TAM_DIC 245367
+#define NOME_ARQUIVO "dicionario.txt"
 
 int buscaBinaria(char *str, char **dicionario, int tamDic)
 {
@@ -119,7 +120,7 @@ int main()
   char *dicionario[TAM_DIC];
   char resp;
   int tamDic = 0;
-  carregaDicionario("dicionario.txt", dicionario, &tamDic);
+  carregaDicionario(NOME_ARQUIVO, dicionario, &tamDic);
 
   do
   {
@@ -129,9 +130,7 @@ int main()
     backtracking(str, 0, strlen(str) - 1, dicionario, tamDic);
     printf("\nContinuar? (s/n): ");
     fflush(stdin);
-    scanf("%c", &resp);
-    tolower(resp);
-    fflush(stdin);
+    resp = tolower(getchar());
   } while (resp == 's');
 
   liberaDicionario(dicionario, tamDic);
