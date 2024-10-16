@@ -62,3 +62,11 @@ void troca(char *x, char *y)
   *x = *y;
   *y = temp;
 }
+
+void processaSolucao(char *str, char **dicionario, int tamDic)
+{
+  int indice = buscaBinaria(str, dicionario, tamDic);
+
+  if (indice != -1)
+    printf("Anagrama encontrado: %s\n", str);
+}
