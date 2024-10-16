@@ -1,2 +1,2 @@
 # Backtracking-Anagram
-Backtracking como quesito de avaliação da matéria de Estrutura de Dados 2
+Gerador de anagrama com uso de backtracking como quesito de avaliação da matéria de Estrutura de Dados 2
