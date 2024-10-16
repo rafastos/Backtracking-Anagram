@@ -33,3 +33,21 @@ int geraCandidatos(char *str, int inicio, int fim, int *candidatos)
   }
   return cont;
 }
+
+void backtracking(char *str, int inicio, int fim)
+{
+  if (inicio == fim)
+    processaSolucao(str);
+  else
+  {
+    int candidatos[TAM_MAX];
+    int numCandidatos = geraCandidatos(str, inicio, fim, candidatos);
+
+    for (int i = 0; i < numCandidatos; i++)
+    {
+      troca(&str[inicio], &str[candidatos[i]]);
+      backtracking(str, inicio + 1, fim);
+      troca(&str[inicio], &str[candidatos[i]]);
+    }
+  }
+}
