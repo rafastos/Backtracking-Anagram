@@ -106,3 +106,27 @@ void backtracking(char *str, int inicio, int fim, char **dicionario, int tamDic)
     }
   }
 }
+
+int main()
+{
+  char str[TAM_MAX];
+  char *dicionario[TAM_DIC];
+  char resp;
+  int dictSize = 0;
+  carregaDicionario("dicionario.txt", dicionario, &dictSize);
+
+  do
+  {
+    printf("Digite um anagrama: ");
+    scanf("%s", str);
+
+    backtracking(str, 0, strlen(str) - 1, dicionario, dictSize);
+    printf("\nContinuar? (s/n): ");
+    fflush(stdin);
+    scanf("%c", &resp);
+    tolower(resp);
+    fflush(stdin);
+  } while (resp == 's');
+
+  return 0;
+}
