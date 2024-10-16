@@ -51,3 +51,13 @@ void backtracking(char *str, int inicio, int fim)
     }
   }
 }
+
+int main()
+{
+  char str[TAM_MAX];
+  printf("Digite uma palavra: ");
+  scanf("%s", str);
+  int n = strlen(str);
+  backtracking(str, 0, n - 1);
+  return 0;
+}
