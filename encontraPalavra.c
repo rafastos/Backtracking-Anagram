@@ -128,8 +128,10 @@ int main()
     scanf("%s", str);
 
     backtracking(str, 0, strlen(str) - 1, dicionario, tamDic);
+    
     printf("\nContinuar? (s/n): ");
-    fflush(stdin);
+    
+    while (getchar() != '\n');
     resp = tolower(getchar());
   } while (resp == 's');
 
